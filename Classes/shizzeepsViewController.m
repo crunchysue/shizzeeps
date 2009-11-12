@@ -77,35 +77,46 @@
 - (void) displayShizzeeps:(NSDictionary *)JSONDictionary {
 	
 	
-	NSURL *baseURL = [[NSURL alloc] initWithString: @"http://shizzeps.com"];
-	
 	for (id key in JSONDictionary) {
 		NSLog(@"key: %@, value: %@", key, [JSONDictionary objectForKey:key]);
-		[webView loadHTMLString:key baseURL:baseURL];
+		
 	}
+	
 }
 
 
 
+#pragma mark Table view methods
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)shizzeepsTable {
+    return 1;
+}
 
 
-	
-	
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Custom initialization
+// Customize the number of rows in the table view.
+- (NSInteger)shizzeepsTable:(UITableView *)shizzeepsTable numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+
+// Customize the appearance of table view cells.
+- (UITableViewCell *)shizzeepsTable:(UITableView *)shizzeepsTable cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [shizzeepsTable dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
-    return self;
+    
+	// Configure the cell.
+	
+    return cell;
 }
-*/
 
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
+
+
+
 
 
 

@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface shizzeepsViewController : UIViewController {
-	IBOutlet UIWebView *webView;
-	IBOutlet UITextView *urlContentsView;
+@interface shizzeepsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+	IBOutlet UITableView *shizzeepsTable;
 }
 
 - (void) loadShizzeeps;
