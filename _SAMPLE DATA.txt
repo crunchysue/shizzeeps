@@ -1,0 +1,119 @@
+2009-11-11 18:29:46.697 shizzeeps[1646:207] key: results, value: {
+    count = 6;
+    places =     (
+                {
+            address1 = "3702 Se Hawthorne Blvd";
+            address2 = "";
+            altitude = "0.0000000";
+            city = Portland;
+            "country_iso" = US;
+            "country_name" = "United States";
+            "is_favorite" = 0;
+            latitude = "45.51195700000000";
+            longitude = "-122.62558600000000";
+            phone = "";
+            "places_key" = zw0P3t;
+            "places_name" = "Bagdad Theater &amp; Pub";
+            population = 2;
+            "state_iso" = OR;
+            "state_name" = Oregon;
+            website = "http://www.mcmenamins.com";
+            zip = 97214;
+        },
+                {
+            address1 = "3041 SE Division";
+            address2 = "";
+            altitude = "0.0000000";
+            city = Portland;
+            "country_iso" = US;
+            "country_name" = "United States";
+            "is_favorite" = 0;
+            latitude = "45.50502300000000";
+            longitude = "-122.63381500000000";
+            phone = "";
+            "places_key" = BrxCJY;
+            "places_name" = "Flying Cat Coffee Compnay";
+            population = 1;
+            "state_iso" = OR;
+            "state_name" = Oregon;
+            website = "";
+            zip = "";
+        },
+                {
+            address1 = "835 SE Stephens Street";
+            address2 = "";
+            altitude = "0.0000000";
+            city = Portland;
+            "country_iso" = US;
+            "country_name" = "United States";
+            "is_favorite" = 0;
+            latitude = "45.50952700000000";
+            longitude = "-122.65714900000000";
+            phone = "";
+            "places_key" = BGgS3s;
+            "places_name" = Fulgury;
+            population = 1;
+            "state_iso" = OR;
+            "state_name" = Oregon;
+            website = "http://www.fulgury.com";
+            zip = 97214;
+        },
+                {
+            address1 = "2035 SE 39th Ave";
+            address2 = "";
+            altitude = "0.0000000";
+            city = Portland;
+            "country_iso" = US;
+            "country_name" = "United States";
+            "is_favorite" = 0;
+            latitude = "45.50819656753730";
+            longitude = "-122.62297868728638";
+            phone = "503 230 0302";
+            "places_key" = Hy1wSh;
+            "places_name" = Lyrik;
+            population = 1;
+            "state_iso" = OR;
+            "state_name" = Oregon;
+            website = "http://www.lyrikpdx.com";
+            zip = 97214;
+        },
+                {
+            address1 = "117 NW 5th Ave, Suite 210";
+            address2 = "";
+            altitude = "0.0000000";
+            city = Portland;
+            "country_iso" = US;
+            "country_name" = "United States";
+            "is_favorite" = 0;
+            latitude = "45.52412780000000";
+            longitude = "-122.67544800000000";
+            phone = "";
+            "places_key" = rqysA9;
+            "places_name" = "NedSpace - Old Town";
+            population = 1;
+            "state_iso" = OR;
+            "state_name" = Oregon;
+            website = "";
+            zip = "";
+        },
+                {
+            address1 = "406 Sw Oak St";
+            address2 = "";
+            altitude = "0.0000000";
+            city = Portland;
+            "country_iso" = US;
+            "country_name" = "United States";
+            "is_favorite" = 0;
+            latitude = "45.52114200000000";
+            longitude = "-122.67530400000000";
+            phone = 5032437777;
+            "places_key" = o7JRbl;
+            "places_name" = Tandoor;
+            population = 1;
+            "state_iso" = OR;
+            "state_name" = Oregon;
+            website = "http://portlandtandoor.com/";
+            zip = 97204;
+        }
+    );
+}

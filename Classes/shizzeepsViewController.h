@@ -14,6 +14,7 @@
 }
 
 - (void) loadShizzeeps;
+- (void) displayShizzeeps: (NSDictionary *)JSONDictionary;
 
 @end
 
