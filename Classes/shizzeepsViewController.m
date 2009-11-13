@@ -26,8 +26,7 @@
 	
 
 	[connection release];
-	[request release]; 
-	[url release];
+	[request release];
 
 }
 
@@ -76,6 +75,7 @@
 // Iterate through the JSON and build a web page out of it, then display it in the webview
 - (void) displayShizzeeps:(NSDictionary *)JSONDictionary {
 	
+	NSLog(@"request is %@", [JSONDictionary objectForKey:@"request"]);
 	
 	for (id key in JSONDictionary) {
 		NSLog(@"key: %@, value: %@", key, [JSONDictionary objectForKey:key]);
@@ -100,11 +100,11 @@
 
 
 // Customize the appearance of table view cells.
-- (UITableViewCell *)shizzeepsTable:(UITableView *)shizzeepsTable cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)shizzeepsTable:(UITableView *)theTable cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [shizzeepsTable dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [theTable dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
