@@ -27,6 +27,7 @@
 
 	[connection release];
 	[request release];
+	[url release];
 
 }
 
@@ -41,25 +42,25 @@
 
 // NOTE: This will not happen when we call shizzeeps - it will happen when we call shizzow to shout
 //		However, I'm leaving it here for future reference.
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-		
-	// Just to make sure this is not happening in the call to shizzeeps
-	NSLog(@"THIS SHOULD NOT HAPPEN: connectionDidReceiveAuthenticationChallenge");
-	
-	// Note that username and password are in passwords.h, which is ignored by git.
-	
-	// from stack overflow
-	// http://stackoverflow.com/questions/1487874/securing-wcf-rest-service-for-use-with-iphone-application
-	NSURLCredential *newCredential; 
-	newCredential=[NSURLCredential credentialWithUser:username
-											 password:password 
-										  persistence:NSURLCredentialPersistenceNone]; 
-	[[challenge sender] useCredential:newCredential 
-		   forAuthenticationChallenge:challenge]; 
-	
-	// end stack overflow		
-		
-}
+//- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+//		
+//	// Just to make sure this is not happening in the call to shizzeeps
+//	NSLog(@"THIS SHOULD NOT HAPPEN: connectionDidReceiveAuthenticationChallenge");
+//	
+//	// Note that username and password are in passwords.h, which is ignored by git.
+//	
+//	// from stack overflow
+//	// http://stackoverflow.com/questions/1487874/securing-wcf-rest-service-for-use-with-iphone-application
+//	NSURLCredential *newCredential; 
+//	newCredential=[NSURLCredential credentialWithUser:username
+//											 password:password 
+//										  persistence:NSURLCredentialPersistenceNone]; 
+//	[[challenge sender] useCredential:newCredential 
+//		   forAuthenticationChallenge:challenge]; 
+//	
+//	// end stack overflow		
+//		
+//}
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 }
@@ -74,56 +75,74 @@
 	NSLog (@"connectionDidFinishLoading");  	
     
 	NSString *responseString = [[NSString alloc] initWithData:shizzeepsResponseData encoding:NSUTF8StringEncoding];
-	//NSLog(@"THE RESPONSE STRING IS: %@",responseString);
-    [shizzeepsResponseData release];
-    
-	
 	
 	// the JSON library adds a category to NSString, which gives us new methods, like JSONValue.
-	NSDictionary *responseDictionary = [responseString JSONValue];	
-	//NSLog(@"THE DICTIONARY IS: %@", [responseDictionary description]);
+	shizzeepsDictionary = [[responseString JSONValue] retain];	
 	
-	// description always returns a string, which is required by the text of the label
+	//NSLog(@"THE RESPONSE STRING IS: %@",responseString);	
+	//NSLog(@"THE DICTIONARY IS: %@", [responseDictionary description]);
 	//NSLog(@"THE REQUEST IS: %@", [[responseDictionary objectForKey:@"request"] description]);
 	
-	//NSArray *request = [responseDictionary objectForKey:@"request"];
-	//NSLog(@"THE LIMIT IS: %@", [[request valueForKey:@"limit"] description]);
+	shizzeepsResults = [[shizzeepsDictionary objectForKey:@"results"] retain];
+	NSLog(@"THE COUNT IS: %@", [[shizzeepsResults valueForKey:@"count"] description]);
 	
-	NSArray *results = [responseDictionary objectForKey:@"results"];
-	NSLog(@"THE COUNT IS: %@", [[results valueForKey:@"count"] description]);
+	// let's see if we can get the first place name
+	//NSArray *places = [results valueForKey:@"places"];
+	//
+//	NSArray	*curplace = [[shizzeepsResults valueForKey:@"places"] objectAtIndex:0];	
+//	
+//	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
+//	NSString *population = [[curplace valueForKey:@"population"] description];
+//	NSString *address1 = [[curplace valueForKey:@"address1"] description];
+//	NSString *city = [[curplace valueForKey:@"city"] description];
+	
+//	NSLog(@"%@ shizzeeps at %@", population, places_name);
 	
 	
+	[shizzeepsTable reloadData];
 	
+
+	// memory cleanup
+	[responseString release];
 }
 
 
-#pragma mark Table view methods
+#pragma mark -
+#pragma mark TableView methods
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)shizzeepsTable {
-//    return 1;
-//}
-//
-//
-//// Customize the number of rows in the table view.
-//- (NSInteger)shizzeepsTable:(UITableView *)shizzeepsTable numberOfRowsInSection:(NSInteger)section {
-//    return 0;
-//}
-//
-//
-//// Customize the appearance of table view cells.
-//- (UITableViewCell *)shizzeepsTable:(UITableView *)theTable cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    static NSString *CellIdentifier = @"Cell";
-//    
-//    UITableViewCell *cell = [theTable dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//    }
-//    
-//	// Configure the cell.
-//	
-//    return cell;
-//}
+
+
+// fill the cells
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	// boilerplate
+	static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+									   reuseIdentifier:CellIdentifier] autorelease];
+    
+	// Configure the cell.
+	
+	
+	NSArray	*curplace = [[shizzeepsResults valueForKey:@"places"] objectAtIndex:indexPath.row];		
+	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
+	NSString *population = [[curplace valueForKey:@"population"] description];
+	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", population, places_name];
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+    return cell;
+}
+
+// a required callback
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	
+	NSArray *results = [shizzeepsDictionary objectForKey:@"results"];
+	int numRows = [[[results valueForKey:@"count"] description] intValue];
+	NSLog(@"I am a table and I have %i rows.", numRows);
+	return numRows;
+	
+}
 
 
 
@@ -163,6 +182,10 @@
 
 - (void)dealloc {
     [super dealloc];
+	[shizzeepsResponseData release];
+	[shizzeepsTable release];
+	[shizzeepsDictionary release];
+	[shizzeepsResults release];
 }
 
 @end
