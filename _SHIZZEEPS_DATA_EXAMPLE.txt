@@ -1,0 +1,423 @@
+
+2009-11-14 13:41:54.776 shizzeeps[9194:207] THE DICTIONARY IS: {
+    request =     {
+        limit = 10;
+        page = 1;
+        start = <null>;
+        time = "2009-11-14T13:30:01-0800";
+        url = "https://v0.api.shizzow.com/places?populated=true&cities=Portland&states=OR&limit=10";
+    };
+    results =     {
+        count = 3;
+        places =         (
+                        {
+                address1 = "322 Nw 6th Ave, Ste 200";
+                address2 = "";
+                altitude = "0.0000000";
+                city = Portland;
+                "country_iso" = US;
+                "country_name" = "United States";
+                "is_favorite" = 0;
+                latitude = "45.52541300000000";
+                longitude = "-122.67632600000000";
+                phone = 5035176900;
+                "places_key" = soauCC;
+                "places_name" = Souk;
+                population = 3;
+                shouts =                 {
+                    request =                     {
+                        limit = 100;
+                        page = 1;
+                        start = <null>;
+                        time = "2009-11-14T13:30:01-0800";
+                        url = "https://v0.api.shizzow.com/places/soauCC/shouts?when=recently&who=everyone&limit=100";
+                    };
+                    results =                     {
+                        count = 3;
+                        places =                         {
+                            address1 = "322 Nw 6th Ave, Ste 200";
+                            address2 = "";
+                            altitude = "0.0000000";
+                            city = Portland;
+                            "country_iso" = US;
+                            "country_name" = "United States";
+                            "is_favorite" = 0;
+                            latitude = "45.52541300000000";
+                            longitude = "-122.67632600000000";
+                            phone = 5035176900;
+                            "places_key" = soauCC;
+                            "places_name" = Souk;
+                            "state_iso" = OR;
+                            "state_name" = Oregon;
+                            website = "http://www.soukllc.com/";
+                            zip = 97209;
+                        };
+                        shouts =                         (
+                                                        {
+                                address1 = "322 Nw 6th Ave, Ste 200";
+                                address2 = "";
+                                altitude = "0.0000000";
+                                "application_id" = "";
+                                "application_name" = "";
+                                "application_website" = "";
+                                arrived = "2009-11-14T11:26:22-0800";
+                                city = Portland;
+                                "country_iso" = US;
+                                "country_name" = "United States";
+                                "is_listener" = 0;
+                                "is_listening" = 0;
+                                "is_person" = 0;
+                                latitude = "45.52541300000000";
+                                longitude = "-122.67632600000000";
+                                modified = "2009-11-14T11:26:22-0800";
+                                "people_images" =                                 {
+                                    "people_image_16" = "http://people.shizzow.com/sam_16.jpg";
+                                    "people_image_24" = "http://people.shizzow.com/sam_24.jpg";
+                                    "people_image_32" = "http://people.shizzow.com/sam_32.jpg";
+                                    "people_image_48" = "http://people.shizzow.com/sam_48.jpg";
+                                    "people_image_64" = "http://people.shizzow.com/sam_64.jpg";
+                                    "people_image_80" = "http://people.shizzow.com/sam_80.jpg";
+                                    "people_image_96" = "http://people.shizzow.com/sam_96.jpg";
+                                };
+                                "people_name" = sam;
+                                phone = 5035176900;
+                                "places_key" = soauCC;
+                                "places_name" = Souk;
+                                "profiles_name" = "Sam Keen";
+                                public = 1;
+                                "shout_time" = "2 hours ago";
+                                "shouts_history_id" = 28572;
+                                "shouts_messages" =                                 (
+                                                                        {
+                                        "application_id" = <null>;
+                                        "application_name" = <null>;
+                                        "application_website" = <null>;
+                                        message = "Igal&#039;s talk on nosql db&#039;s #opensqlcamp";
+                                        "shout_time" = "2 hours ago";
+                                        "shouts_history_id" = 28572;
+                                        time = "2009-11-14T11:26:22-0800";
+                                    }
+                                );
+                                "state_iso" = OR;
+                                "state_name" = Oregon;
+                                status = here;
+                                website = "http://www.soukllc.com/";
+                                zip = 97209;
+                            },
+                                                        {
+                                address1 = "322 Nw 6th Ave, Ste 200";
+                                address2 = "";
+                                altitude = "0.0000000";
+                                "application_id" = "";
+                                "application_name" = "";
+                                "application_website" = "";
+                                arrived = "2009-11-14T09:37:39-0800";
+                                city = Portland;
+                                "country_iso" = US;
+                                "country_name" = "United States";
+                                "is_listener" = 0;
+                                "is_listening" = 0;
+                                "is_person" = 0;
+                                latitude = "45.52541300000000";
+                                longitude = "-122.67632600000000";
+                                modified = "2009-11-14T09:37:39-0800";
+                                "people_images" =                                 {
+                                    "people_image_16" = "http://people.shizzow.com/pdxflaneur_16.jpg";
+                                    "people_image_24" = "http://people.shizzow.com/pdxflaneur_24.jpg";
+                                    "people_image_32" = "http://people.shizzow.com/pdxflaneur_32.jpg";
+                                    "people_image_48" = "http://people.shizzow.com/pdxflaneur_48.jpg";
+                                    "people_image_64" = "http://people.shizzow.com/pdxflaneur_64.jpg";
+                                    "people_image_80" = "http://people.shizzow.com/pdxflaneur_80.jpg";
+                                    "people_image_96" = "http://people.shizzow.com/pdxflaneur_96.jpg";
+                                };
+                                "people_name" = pdxflaneur;
+                                phone = 5035176900;
+                                "places_key" = soauCC;
+                                "places_name" = Souk;
+                                "profiles_name" = "Portland Flaneur";
+                                public = 1;
+                                "shout_time" = "3 hours ago";
+                                "shouts_history_id" = 28571;
+                                "shouts_messages" =                                 (
+                                                                        {
+                                        "application_id" = <null>;
+                                        "application_name" = <null>;
+                                        "application_website" = <null>;
+                                        message = "OpenSQL Camp";
+                                        "shout_time" = "3 hours ago";
+                                        "shouts_history_id" = 28571;
+                                        time = "2009-11-14T09:37:39-0800";
+                                    }
+                                );
+                                "state_iso" = OR;
+                                "state_name" = Oregon;
+                                status = here;
+                                website = "http://www.soukllc.com/";
+                                zip = 97209;
+                            },
+                                                        {
+                                address1 = "322 Nw 6th Ave, Ste 200";
+                                address2 = "";
+                                altitude = "0.0000000";
+                                "application_id" = "";
+                                "application_name" = "";
+                                "application_website" = "";
+                                arrived = "2009-11-14T09:32:43-0800";
+                                city = Portland;
+                                "country_iso" = US;
+                                "country_name" = "United States";
+                                "is_listener" = 0;
+                                "is_listening" = 0;
+                                "is_person" = 0;
+                                latitude = "45.52541300000000";
+                                longitude = "-122.67632600000000";
+                                modified = "2009-11-14T09:32:43-0800";
+                                "people_images" =                                 {
+                                    "people_image_16" = "http://people.shizzow.com/christiekoehler_16.jpg";
+                                    "people_image_24" = "http://people.shizzow.com/christiekoehler_24.jpg";
+                                    "people_image_32" = "http://people.shizzow.com/christiekoehler_32.jpg";
+                                    "people_image_48" = "http://people.shizzow.com/christiekoehler_48.jpg";
+                                    "people_image_64" = "http://people.shizzow.com/christiekoehler_64.jpg";
+                                    "people_image_80" = "http://people.shizzow.com/christiekoehler_80.jpg";
+                                    "people_image_96" = "http://people.shizzow.com/christiekoehler_96.jpg";
+                                };
+                                "people_name" = christiekoehler;
+                                phone = 5035176900;
+                                "places_key" = soauCC;
+                                "places_name" = Souk;
+                                "profiles_name" = "Christie Koehler";
+                                public = 1;
+                                "shout_time" = "3 hours ago";
+                                "shouts_history_id" = 28569;
+                                "shouts_messages" =                                 (
+                                                                        {
+                                        "application_id" = <null>;
+                                        "application_name" = <null>;
+                                        "application_website" = <null>;
+                                        message = "OpenSQLCamp!";
+                                        "shout_time" = "3 hours ago";
+                                        "shouts_history_id" = 28569;
+                                        time = "2009-11-14T09:32:43-0800";
+                                    }
+                                );
+                                "state_iso" = OR;
+                                "state_name" = Oregon;
+                                status = here;
+                                website = "http://www.soukllc.com/";
+                                zip = 97209;
+                            }
+                        );
+                    };
+                };
+                "state_iso" = OR;
+                "state_name" = Oregon;
+                website = "http://www.soukllc.com/";
+                zip = 97209;
+            },
+                        {
+                address1 = "3610 Se Hawthorne Blvd";
+                address2 = "";
+                altitude = "0.0000000";
+                city = Portland;
+                "country_iso" = US;
+                "country_name" = "United States";
+                "is_favorite" = 0;
+                latitude = "45.51189800000000";
+                longitude = "-122.62646900000000";
+                phone = 5032394756;
+                "places_key" = CfawOR;
+                "places_name" = "Bread &amp; Ink Cafe";
+                population = 1;
+                shouts =                 {
+                    request =                     {
+                        limit = 100;
+                        page = 1;
+                        start = <null>;
+                        time = "2009-11-14T13:30:01-0800";
+                        url = "https://v0.api.shizzow.com/places/CfawOR/shouts?when=recently&who=everyone&limit=100";
+                    };
+                    results =                     {
+                        count = 1;
+                        places =                         {
+                            address1 = "3610 Se Hawthorne Blvd";
+                            address2 = "";
+                            altitude = "0.0000000";
+                            city = Portland;
+                            "country_iso" = US;
+                            "country_name" = "United States";
+                            "is_favorite" = 0;
+                            latitude = "45.51189800000000";
+                            longitude = "-122.62646900000000";
+                            phone = 5032394756;
+                            "places_key" = CfawOR;
+                            "places_name" = "Bread & Ink Cafe";
+                            "state_iso" = OR;
+                            "state_name" = Oregon;
+                            website = "";
+                            zip = 97214;
+                        };
+                        shouts =                         (
+                                                        {
+                                address1 = "3610 Se Hawthorne Blvd";
+                                address2 = "";
+                                altitude = "0.0000000";
+                                "application_id" = "";
+                                "application_name" = "";
+                                "application_website" = "";
+                                arrived = "2009-11-14T08:36:01-0800";
+                                city = Portland;
+                                "country_iso" = US;
+                                "country_name" = "United States";
+                                "is_listener" = 0;
+                                "is_listening" = 0;
+                                "is_person" = 0;
+                                latitude = "45.51189800000000";
+                                longitude = "-122.62646900000000";
+                                modified = "2009-11-14T08:36:01-0800";
+                                "people_images" =                                 {
+                                    "people_image_16" = "http://people.shizzow.com/roby_16.jpg";
+                                    "people_image_24" = "http://people.shizzow.com/roby_24.jpg";
+                                    "people_image_32" = "http://people.shizzow.com/roby_32.jpg";
+                                    "people_image_48" = "http://people.shizzow.com/roby_48.jpg";
+                                    "people_image_64" = "http://people.shizzow.com/roby_64.jpg";
+                                    "people_image_80" = "http://people.shizzow.com/roby_80.jpg";
+                                    "people_image_96" = "http://people.shizzow.com/roby_96.jpg";
+                                };
+                                "people_name" = roby;
+                                phone = 5032394756;
+                                "places_key" = CfawOR;
+                                "places_name" = "Bread &amp; Ink Cafe";
+                                "profiles_name" = "Roby Denmark";
+                                public = 1;
+                                "shout_time" = "4 hours ago";
+                                "shouts_history_id" = 28568;
+                                "shouts_messages" =                                 (
+                                                                        {
+                                        "application_id" = <null>;
+                                        "application_name" = <null>;
+                                        "application_website" = <null>;
+                                        message = "Waffles with the doodle. Bruce here is the sweetest server.";
+                                        "shout_time" = "4 hours ago";
+                                        "shouts_history_id" = 28568;
+                                        time = "2009-11-14T08:36:01-0800";
+                                    }
+                                );
+                                "state_iso" = OR;
+                                "state_name" = Oregon;
+                                status = here;
+                                website = "";
+                                zip = 97214;
+                            }
+                        );
+                    };
+                };
+                "state_iso" = OR;
+                "state_name" = Oregon;
+                website = "";
+                zip = 97214;
+            },
+                        {
+                address1 = "253 N. Broadway St.";
+                address2 = "";
+                altitude = "0.0000000";
+                city = Portland;
+                "country_iso" = US;
+                "country_name" = "United States";
+                "is_favorite" = 0;
+                latitude = "45.53571300000000";
+                longitude = "-122.66937200000000";
+                phone = "";
+                "places_key" = FjDiCg;
+                "places_name" = "Figleaf&#039;s Domicile (Grey Skull)";
+                population = 1;
+                shouts =                 {
+                    request =                     {
+                        limit = 100;
+                        page = 1;
+                        start = <null>;
+                        time = "2009-11-14T13:30:02-0800";
+                        url = "https://v0.api.shizzow.com/places/FjDiCg/shouts?when=recently&who=everyone&limit=100";
+                    };
+                    results =                     {
+                        count = 1;
+                        places =                         {
+                            address1 = "253 N. Broadway St.";
+                            address2 = "";
+                            altitude = "0.0000000";
+                            city = Portland;
+                            "country_iso" = US;
+                            "country_name" = "United States";
+                            "is_favorite" = 0;
+                            latitude = "45.53571300000000";
+                            longitude = "-122.66937200000000";
+                            phone = "";
+                            "places_key" = FjDiCg;
+                            "places_name" = "Figleaf's Domicile (Grey Skull)";
+                            "state_iso" = OR;
+                            "state_name" = Oregon;
+                            website = "";
+                            zip = "97227-1855";
+                        };
+                        shouts =                         (
+                                                        {
+                                address1 = "253 N. Broadway St.";
+                                address2 = "";
+                                altitude = "0.0000000";
+                                "application_id" = "";
+                                "application_name" = "";
+                                "application_website" = "";
+                                arrived = "2009-11-14T02:55:31-0800";
+                                city = Portland;
+                                "country_iso" = US;
+                                "country_name" = "United States";
+                                "is_listener" = 0;
+                                "is_listening" = 0;
+                                "is_person" = 0;
+                                latitude = "45.53571300000000";
+                                longitude = "-122.66937200000000";
+                                modified = "2009-11-14T02:55:31-0800";
+                                "people_images" =                                 {
+                                    "people_image_16" = "http://people.shizzow.com/figleaf_16.jpg";
+                                    "people_image_24" = "http://people.shizzow.com/figleaf_24.jpg";
+                                    "people_image_32" = "http://people.shizzow.com/figleaf_32.jpg";
+                                    "people_image_48" = "http://people.shizzow.com/figleaf_48.jpg";
+                                    "people_image_64" = "http://people.shizzow.com/figleaf_64.jpg";
+                                    "people_image_80" = "http://people.shizzow.com/figleaf_80.jpg";
+                                    "people_image_96" = "http://people.shizzow.com/figleaf_96.jpg";
+                                };
+                                "people_name" = figleaf;
+                                phone = "";
+                                "places_key" = FjDiCg;
+                                "places_name" = "Figleaf&#039;s Domicile (Grey Skull)";
+                                "profiles_name" = "Ryan Hutchison";
+                                public = 1;
+                                "shout_time" = "10 hours ago";
+                                "shouts_history_id" = 28567;
+                                "shouts_messages" =                                 (
+                                                                        {
+                                        "application_id" = <null>;
+                                        "application_name" = <null>;
+                                        "application_website" = <null>;
+                                        message = "i wonder, why is it that allow myself to suck like i do?";
+                                        "shout_time" = "10 hours ago";
+                                        "shouts_history_id" = 28567;
+                                        time = "2009-11-14T02:55:31-0800";
+                                    }
+                                );
+                                "state_iso" = OR;
+                                "state_name" = Oregon;
+                                status = here;
+                                website = "";
+                                zip = "97227-1855";
+                            }
+                        );
+                    };
+                };
+                "state_iso" = OR;
+                "state_name" = Oregon;
+                website = "";
+                zip = "97227-1855";
+            }
+        );
+    };
+}

@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface shizzeepsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-	IBOutlet UITableView *shizzeepsTable;
+//@interface shizzeepsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+
+@interface shizzeepsViewController : UIViewController {
+	
+	// this will hold our shizzeeps response data, and be updated a little chunk at a time.
+	NSMutableData *shizzeepsResponseData;
+	
+	//IBOutlet UITableView *shizzeepsTable;
 }
 
 - (void) loadShizzeeps;
-- (void) displayShizzeeps: (NSDictionary *)JSONDictionary;
 
 @end
 
