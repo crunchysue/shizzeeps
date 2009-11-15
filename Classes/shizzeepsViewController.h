@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "shizzeeps.h"
+
 
 @interface shizzeepsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+	//
+//	// this will hold our shizzeeps response data, and be updated a little chunk at a time.
+//	NSMutableData *shizzeepsResponseData;
+//	NSDictionary *shizzeepsDictionary;
+//	NSArray *shizzeepsResults; // this is where most of the good stuff is.
 	
-	// this will hold our shizzeeps response data, and be updated a little chunk at a time.
-	NSMutableData *shizzeepsResponseData;
-	NSDictionary *shizzeepsDictionary;
-	NSArray *shizzeepsResults; // this is where most of the good stuff is.
+	
+	shizzeeps *oShizzeeps;
 	IBOutlet UITableView *shizzeepsTable;
 }
 
-- (void) loadShizzeeps;
+//- (void) loadShizzeeps;
 
 @end
 

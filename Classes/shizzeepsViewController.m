@@ -7,103 +7,31 @@
 //
 
 #import "shizzeepsViewController.h"
-#import "passwords.h"
-#import "JSON.h"
+//#import "JSON.h"
 
 
 @implementation shizzeepsViewController
 
-
-- (void) loadShizzeeps {
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+    [super viewDidLoad];
 	
-	NSString *shizzeepsURL = @"http://shizzeeps.com/bin/ajax.php?f=shizzeepsstatic&city=pdx";
+	oShizzeeps = [[shizzeeps alloc] init];
+	oShizzeeps.load;
 	
-	shizzeepsResponseData = [[NSMutableData alloc] init];
-	NSURL *url = [[NSURL alloc] initWithString: shizzeepsURL]; 
-	NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url]; 
-	NSURLConnection *connection = [[NSURLConnection alloc]
-								   initWithRequest:request delegate:self];
-	
-
-	[connection release];
-	[request release];
-	[url release];
-
-}
-
-#pragma mark -
-#pragma mark Connection Callbacks
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	NSLog (@"connectionDidReceiveResponse");
-	[shizzeepsResponseData setLength:0];
-}
-
-
-// NOTE: This will not happen when we call shizzeeps - it will happen when we call shizzow to shout
-//		However, I'm leaving it here for future reference.
-//- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-//		
-//	// Just to make sure this is not happening in the call to shizzeeps
-//	NSLog(@"THIS SHOULD NOT HAPPEN: connectionDidReceiveAuthenticationChallenge");
-//	
-//	// Note that username and password are in passwords.h, which is ignored by git.
-//	
-//	// from stack overflow
-//	// http://stackoverflow.com/questions/1487874/securing-wcf-rest-service-for-use-with-iphone-application
-//	NSURLCredential *newCredential; 
-//	newCredential=[NSURLCredential credentialWithUser:username
-//											 password:password 
-//										  persistence:NSURLCredentialPersistenceNone]; 
-//	[[challenge sender] useCredential:newCredential 
-//		   forAuthenticationChallenge:challenge]; 
-//	
-//	// end stack overflow		
-//		
-//}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	NSLog (@"connectionDidReceiveData");
-	[shizzeepsResponseData appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-
-	NSLog (@"connectionDidFinishLoading");  	
-    
-	NSString *responseString = [[NSString alloc] initWithData:shizzeepsResponseData encoding:NSUTF8StringEncoding];
-	
-	// the JSON library adds a category to NSString, which gives us new methods, like JSONValue.
-	shizzeepsDictionary = [[responseString JSONValue] retain];	
-	
-	//NSLog(@"THE RESPONSE STRING IS: %@",responseString);	
-	//NSLog(@"THE DICTIONARY IS: %@", [responseDictionary description]);
-	//NSLog(@"THE REQUEST IS: %@", [[responseDictionary objectForKey:@"request"] description]);
-	
-	shizzeepsResults = [[shizzeepsDictionary objectForKey:@"results"] retain];
-	NSLog(@"THE COUNT IS: %@", [[shizzeepsResults valueForKey:@"count"] description]);
-	
-	// let's see if we can get the first place name
-	//NSArray *places = [results valueForKey:@"places"];
-	//
-//	NSArray	*curplace = [[shizzeepsResults valueForKey:@"places"] objectAtIndex:0];	
-//	
-//	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
-//	NSString *population = [[curplace valueForKey:@"population"] description];
-//	NSString *address1 = [[curplace valueForKey:@"address1"] description];
-//	NSString *city = [[curplace valueForKey:@"city"] description];
-	
-//	NSLog(@"%@ shizzeeps at %@", population, places_name);
-	
+	NSLog(@"in viewdidload, count is %i", oShizzeeps.count);
 	
 	[shizzeepsTable reloadData];
-	
 
-	// memory cleanup
-	[responseString release];
+	
+//	[self loadShizzeeps];
+}
+
+
+- (void)dealloc {
+    [super dealloc];
+	[oShizzeeps release];
+	[shizzeepsTable release];
 }
 
 
@@ -125,7 +53,7 @@
 	// Configure the cell.
 	
 	
-	NSArray	*curplace = [[shizzeepsResults valueForKey:@"places"] objectAtIndex:indexPath.row];		
+	NSArray	*curplace = [[oShizzeeps.results valueForKey:@"places"] objectAtIndex:indexPath.row];		
 	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
 	NSString *population = [[curplace valueForKey:@"population"] description];
 	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", population, places_name];
@@ -134,38 +62,22 @@
     return cell;
 }
 
-// a required callback
+// Number of Rows in Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-	NSArray *results = [shizzeepsDictionary objectForKey:@"results"];
-	int numRows = [[[results valueForKey:@"count"] description] intValue];
+	int numRows = oShizzeeps.count;
 	NSLog(@"I am a table and I have %i rows.", numRows);
 	return numRows;
 	
 }
 
 
-
-
-
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	
-	[self loadShizzeeps];
-}
-
-
-
-/*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
-*/
+
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
@@ -177,15 +89,6 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
-}
-
-
-- (void)dealloc {
-    [super dealloc];
-	[shizzeepsResponseData release];
-	[shizzeepsTable release];
-	[shizzeepsDictionary release];
-	[shizzeepsResults release];
 }
 
 @end
