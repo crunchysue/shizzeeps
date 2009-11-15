@@ -22,7 +22,7 @@
 	IBOutlet UITableView *shizzeepsTable;
 }
 
-//- (void) loadShizzeeps;
+- (void) displayShizzeeps;
 
 @end
 

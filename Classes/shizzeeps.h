@@ -11,20 +11,27 @@
 
 @interface shizzeeps : NSObject {
 	
-	// this will hold our shizzeeps response data, and be updated a little chunk at a time.
-	NSMutableData *shizzeepsResponseData;
-	NSDictionary *dict;
-	NSArray *results; // this is where most of the good stuff is.
+	NSMutableData	*shizzeepsResponseData;
+	NSDictionary	*dict;
+	NSArray			*results; // this is where most of the good stuff is.
 	
 	// count is how many places have shizzeeps in them
 	int count; 
+	
+	// the callbacks, so we can send the data to the caller when it's ready
+	id				 delegate;
+	SEL				 callback;
+	SEL				 errorCallback;
 }
 
 
-@property (readwrite, assign) int count;
-@property (nonatomic, retain) NSDictionary *dict;
-@property (nonatomic, retain) NSArray *results;
+@property (nonatomic, retain) NSDictionary	* dict;
+@property (nonatomic, retain) NSArray		* results;
+@property (readwrite, assign) int			count;
+@property(nonatomic, retain)  id			delegate;
+@property(nonatomic)		  SEL			callback;
+@property(nonatomic)		  SEL			errorCallback;
 
-- (void) load;
+- (void) init:(id)requestDelegate requestSelector:(SEL)requestSelector;
 
 @end

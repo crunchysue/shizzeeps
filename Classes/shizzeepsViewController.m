@@ -7,8 +7,7 @@
 //
 
 #import "shizzeepsViewController.h"
-//#import "JSON.h"
-
+#import "discovery.h"
 
 @implementation shizzeepsViewController
 
@@ -17,14 +16,8 @@
     [super viewDidLoad];
 	
 	oShizzeeps = [[shizzeeps alloc] init];
-	oShizzeeps.load;
+	[oShizzeeps init:self requestSelector:@selector(displayShizzeeps)];
 	
-	NSLog(@"in viewdidload, count is %i", oShizzeeps.count);
-	
-	[shizzeepsTable reloadData];
-
-	
-//	[self loadShizzeeps];
 }
 
 
@@ -34,10 +27,27 @@
 	[shizzeepsTable release];
 }
 
+#pragma mark -
+#pragma mark Callback from shizzeeps
+
+
+
+
+/* displayShizzeeps
+ After the shizzeeps object has all its data loaded, this is the 
+ callback function that it calls. This has to be done because we can't
+ show the tableview until we have the data.
+ -------------------------------------------------------------------------- */
+- (void) displayShizzeeps {
+	
+	[shizzeepsTable reloadData];
+	
+}
+
+
 
 #pragma mark -
 #pragma mark TableView methods
-
 
 
 // fill the cells
@@ -47,17 +57,47 @@
 	static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault 
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
 									   reuseIdentifier:CellIdentifier] autorelease];
     
-	// Configure the cell.
+	// Configure the cell.	
 	
-	
-	NSArray	*curplace = [[oShizzeeps.results valueForKey:@"places"] objectAtIndex:indexPath.row];		
+	NSDictionary *curplace = [[oShizzeeps.results valueForKey:@"places"] objectAtIndex:indexPath.row];		
 	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
+	
+	// sometimes places_name has an ampersand <rolls eyes>
+	places_name = [places_name stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+	
 	NSString *population = [[curplace valueForKey:@"population"] description];
+	
+	// get the names of the people in this place
+	
 	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", population, places_name];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+	NSDictionary *shouts = [curplace objectForKey:@"shouts"];
+	NSDictionary *s_results = [shouts objectForKey:@"results"];
+	NSArray *s_r_shouts = [s_results objectForKey:@"shouts"];	
+	NSArray *name = [s_r_shouts valueForKey:@"people_name"];
+		
+	// make the names look better
+	NSEnumerator *enumerator = [name objectEnumerator];
+	id anObject;
+	NSString *names = @"";
+	while (anObject = [enumerator nextObject]) {
+			names = [NSString stringWithFormat:@"%@ %@", names, [anObject description]];
+	}
+	cell.detailTextLabel.text = names;
+   
+	
+	
+	//NSLog(@"curplace: %@\n\n", [curplace description]);	
+	//NSLog(@"shouts:\n\n%@", [shouts description]);
+	//NSLog(@"shouts_results:\n\n%@", [shouts_results description]);
+	//NSLog(@"shouts -> results -> shouts:\n\n%@", [s_r_shouts description]);
+	//NSLog(@"name: %@", name);
+	
+	
 	
     return cell;
 }

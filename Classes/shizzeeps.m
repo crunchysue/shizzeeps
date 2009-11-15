@@ -9,12 +9,20 @@
 #import "shizzeeps.h"
 #import "JSON.h"
 
+#define DEBUG 0
+
+#if DEBUG 
+	#import "discovery.h"
+#endif
 
 @implementation shizzeeps
 
 @synthesize count;
 @synthesize dict;
 @synthesize results;
+@synthesize delegate;
+@synthesize callback;
+@synthesize errorCallback;
 
 - (void)dealloc {
     [super dealloc];
@@ -24,10 +32,17 @@
 }
 
 
-/* load
+/* init
 	Get the data off the Internets
+	This callback pattern came from a tutorial here:
+	http://brandontreb.com/objective-c-programming-tutorial-creating-a-twitter-client-part-1/
  -------------------------------------------------------------------------- */
-- (void) load {
+- (void) init:(id)requestDelegate requestSelector:(SEL)requestSelector{
+
+	// Set the delegate and selector
+	self.delegate = requestDelegate;
+	self.callback = requestSelector;
+
 	
 	NSString *shizzeepsURL = @"http://shizzeeps.com/bin/ajax.php?f=shizzeepsstatic&city=pdx";
 	
@@ -55,8 +70,6 @@
 	NSLog (@"connectionDidReceiveResponse");
 	[shizzeepsResponseData setLength:0];
 }
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-}
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog (@"connectionDidReceiveData");
@@ -81,28 +94,37 @@
 	self.results = [[self.dict objectForKey:@"results"] retain];
 	self.count = [[[self.results valueForKey:@"count"] description] intValue];
 	
-	NSLog(@"in shizzeeps.m, count is %i", self.count);
-	
-	//NSLog(@"THE COUNT IS: %@", [[shizzeepsResults valueForKey:@"count"] description]);
-	
-	// let's see if we can get the first place name
-	//NSArray *places = [results valueForKey:@"places"];
-	//
-	//	NSArray	*curplace = [[shizzeepsResults valueForKey:@"places"] objectAtIndex:0];	
-	//	
-	//	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
-	//	NSString *population = [[curplace valueForKey:@"population"] description];
-	//	NSString *address1 = [[curplace valueForKey:@"address1"] description];
-	//	NSString *city = [[curplace valueForKey:@"city"] description];
-	
-	//	NSLog(@"%@ shizzeeps at %@", population, places_name);
+#if DEBUG
+	discovery *disc = [[discovery alloc] init];
+	disc.theArray = self.results;
+	disc.discover;
+	[disc release];	
+	exit(1);
+#endif
 	
 	
-	//[shizzeepsTable reloadData];
-	
+	if(delegate && callback) {
+		if([delegate respondsToSelector:self.callback]) {
+			[delegate performSelector:self.callback];
+		} else {
+			NSLog(@"No response from delegate");
+		}
+	} 
 	
 	// memory cleanup
 	[responseString release];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	
+    // inform the user
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);
+	
+	if(errorCallback) {
+		[delegate performSelector:errorCallback withObject:error];
+	}
 }
 
 

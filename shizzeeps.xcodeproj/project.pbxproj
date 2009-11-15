@@ -25,7 +25,9 @@
 		801F1E6810AF78650000C533 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F1E6710AF78650000C533 /* Icon.png */; };
 		801F1E9B10AF7AD90000C533 /* shizzeeps.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F1E9A10AF7AD90000C533 /* shizzeeps.m */; };
 		801F1E9E10AF7B0F0000C533 /* shizzow.m in Sources */ = {isa = PBXBuildFile; fileRef = 801F1E9D10AF7B0F0000C533 /* shizzow.m */; };
+		801F1FF310AFB5AC0000C533 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F1FF210AFB5AC0000C533 /* Default.png */; };
 		806B4B8D10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B4B8C10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m */; };
+		80CC139810B07CEB00F4D246 /* discovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC139710B07CEB00F4D246 /* discovery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +63,11 @@
 		801F1E9A10AF7AD90000C533 /* shizzeeps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzeeps.m; sourceTree = "<group>"; };
 		801F1E9C10AF7B0F0000C533 /* shizzow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzow.h; sourceTree = "<group>"; };
 		801F1E9D10AF7B0F0000C533 /* shizzow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzow.m; sourceTree = "<group>"; };
+		801F1FF210AFB5AC0000C533 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		806B4B8B10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+IgnoreSSL.h"; sourceTree = "<group>"; };
 		806B4B8C10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+IgnoreSSL.m"; sourceTree = "<group>"; };
+		80CC139610B07CEB00F4D246 /* discovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discovery.h; sourceTree = "<group>"; };
+		80CC139710B07CEB00F4D246 /* discovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = discovery.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* shizzeeps-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "shizzeeps-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,13 +88,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				80CC137810B078F800F4D246 /* Extras */,
 				801F1C1310AF449F0000C533 /* JSON */,
 				1D3623240D0F684500981E51 /* shizzeepsAppDelegate.h */,
 				1D3623250D0F684500981E51 /* shizzeepsAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* shizzeepsViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* shizzeepsViewController.m */,
-				806B4B8B10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.h */,
-				806B4B8C10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m */,
 				8013371110AB9D2700F82685 /* passwords.h */,
 				801F1E9910AF7AD90000C533 /* shizzeeps.h */,
 				801F1E9A10AF7AD90000C533 /* shizzeeps.m */,
@@ -132,6 +136,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				801F1FF210AFB5AC0000C533 /* Default.png */,
 				2899E5210DE3E06400AC0155 /* shizzeepsViewController.xib */,
 				801F1E6710AF78650000C533 /* Icon.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
@@ -168,6 +173,17 @@
 				801F1C2010AF449F0000C533 /* SBJsonWriter.m */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		80CC137810B078F800F4D246 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				806B4B8B10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.h */,
+				806B4B8C10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m */,
+				80CC139610B07CEB00F4D246 /* discovery.h */,
+				80CC139710B07CEB00F4D246 /* discovery.m */,
+			);
+			name = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +232,7 @@
 				2899E5220DE3E06400AC0155 /* shizzeepsViewController.xib in Resources */,
 				801F1CC910AF5BE50000C533 /* _SHIZZEEPS_DATA_EXAMPLE.txt in Resources */,
 				801F1E6810AF78650000C533 /* Icon.png in Resources */,
+				801F1FF310AFB5AC0000C533 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +255,7 @@
 				801F1C2610AF449F0000C533 /* SBJsonWriter.m in Sources */,
 				801F1E9B10AF7AD90000C533 /* shizzeeps.m in Sources */,
 				801F1E9E10AF7B0F0000C533 /* shizzow.m in Sources */,
+				80CC139810B07CEB00F4D246 /* discovery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
