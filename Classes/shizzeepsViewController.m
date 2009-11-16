@@ -62,6 +62,9 @@
     
 	// Configure the cell.	
 	
+	// i want to do something likethis:
+	// NSString *curplacename = oShizzeeps.places[indexPath.row].name
+	
 	NSDictionary *curplace = [[oShizzeeps.results valueForKey:@"places"] objectAtIndex:indexPath.row];		
 	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
 	

@@ -8,6 +8,7 @@
 
 #import "shizzeeps.h"
 #import "JSON.h"
+#import "place.h"
 
 #define DEBUG 0
 
@@ -20,6 +21,7 @@
 @synthesize count;
 @synthesize dict;
 @synthesize results;
+@synthesize places;
 @synthesize delegate;
 @synthesize callback;
 @synthesize errorCallback;
@@ -29,6 +31,7 @@
 	[shizzeepsResponseData release];
 	[dict release];
 	[results release];
+	[places release];
 }
 
 
@@ -90,9 +93,22 @@
 	//NSLog(@"THE REQUEST IS: %@", [[self.dict objectForKey:@"request"] description]);
 	
 	
-	// set the count property
 	self.results = [[self.dict objectForKey:@"results"] retain];
 	self.count = [[[self.results valueForKey:@"count"] description] intValue];
+	
+	// build up an array of place objects and add them to our instance variable, places (an array)
+	self.places = [[NSMutableArray alloc] initWithCapacity:self.count-1];
+	for (int i=0; i<self.count; i++) {
+		NSDictionary *curplace = [[self.results valueForKey:@"places"] objectAtIndex:i];
+		place *oPlace = [[place alloc] init];
+		oPlace.placeDict = curplace;
+		[oPlace initPlace];
+		[self.places insertObject:oPlace atIndex:i];
+		[place release];
+	}
+	 
+		
+	
 	
 #if DEBUG
 	discovery *disc = [[discovery alloc] init];

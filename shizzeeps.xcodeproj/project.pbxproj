@@ -28,6 +28,7 @@
 		801F1FF310AFB5AC0000C533 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 801F1FF210AFB5AC0000C533 /* Default.png */; };
 		806B4B8D10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 806B4B8C10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m */; };
 		80CC139810B07CEB00F4D246 /* discovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC139710B07CEB00F4D246 /* discovery.m */; };
+		80CC15D710B0C2D700F4D246 /* place.m in Sources */ = {isa = PBXBuildFile; fileRef = 80CC15D610B0C2D700F4D246 /* place.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,8 @@
 		806B4B8C10AB44A2007FCE23 /* NSURLRequest+IgnoreSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+IgnoreSSL.m"; sourceTree = "<group>"; };
 		80CC139610B07CEB00F4D246 /* discovery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = discovery.h; sourceTree = "<group>"; };
 		80CC139710B07CEB00F4D246 /* discovery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = discovery.m; sourceTree = "<group>"; };
+		80CC15D510B0C2D700F4D246 /* place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = place.h; sourceTree = "<group>"; };
+		80CC15D610B0C2D700F4D246 /* place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = place.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* shizzeeps-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "shizzeeps-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +102,8 @@
 				801F1E9A10AF7AD90000C533 /* shizzeeps.m */,
 				801F1E9C10AF7B0F0000C533 /* shizzow.h */,
 				801F1E9D10AF7B0F0000C533 /* shizzow.m */,
+				80CC15D510B0C2D700F4D246 /* place.h */,
+				80CC15D610B0C2D700F4D246 /* place.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -256,6 +261,7 @@
 				801F1E9B10AF7AD90000C533 /* shizzeeps.m in Sources */,
 				801F1E9E10AF7B0F0000C533 /* shizzow.m in Sources */,
 				80CC139810B07CEB00F4D246 /* discovery.m in Sources */,
+				80CC15D710B0C2D700F4D246 /* place.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
