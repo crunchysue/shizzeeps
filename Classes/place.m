@@ -13,6 +13,7 @@
 
 @synthesize placeDict;
 @synthesize name;
+@synthesize placeID;
 @synthesize population;
 @synthesize address1;
 @synthesize address2;
@@ -21,6 +22,7 @@
 @synthesize zip;
 @synthesize url;
 @synthesize shouts;
+@synthesize people;
 	
 
 - (void) initPlace {
@@ -29,11 +31,12 @@
 		NSLog(@"placeDict must be set before calling initPlace");
 		exit(0);
 	}
-	
-	
+		
 	self.name = [[placeDict valueForKey:@"places_name"] description];
-	// sometimes places_name has an ampersand <rolls eyes>
 	self.name = [self.name stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+	self.name = [self.name stringByReplacingOccurrencesOfString:@"&#039;" withString:@"'"];
+	
+	self.placeID = [[placeDict valueForKey:@"places_key"] description];
 	
 	self.population = [[placeDict valueForKey:@"population"] description];
 	
@@ -49,51 +52,8 @@
 	while (anObject = [enumerator nextObject]) {
 		names = [NSString stringWithFormat:@"%@ %@", names, [anObject description]];
 	}
+	self.people = names;	
 	
-	
-	
-	
-	NSLog(@"name: %@", self.name);
-	NSLog(@"population: %@", self.population);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	NSLog(@"name: %@", self.name);
-	
-	
-
-//	NSDictionary *curplace = [[oShizzeeps.results valueForKey:@"places"] objectAtIndex:indexPath.row];		
-//	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
-//	
-//	// sometimes places_name has an ampersand <rolls eyes>
-//	places_name = [places_name stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-//	
-//	NSString *population = [[curplace valueForKey:@"population"] description];
-//	
-//	// get the names of the people in this place
-//	
-//	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", population, places_name];
-//	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//	
-//	NSDictionary *shouts = [curplace objectForKey:@"shouts"];
-//	NSDictionary *s_results = [shouts objectForKey:@"results"];
-//	NSArray *s_r_shouts = [s_results objectForKey:@"shouts"];	
-//	NSArray *name = [s_r_shouts valueForKey:@"people_name"];
-//	
-//	// make the names look better
-//	NSEnumerator *enumerator = [name objectEnumerator];
-//	id anObject;
-//	NSString *names = @"";
-//	while (anObject = [enumerator nextObject]) {
-//		names = [NSString stringWithFormat:@"%@ %@", names, [anObject description]];
-//	}
-
 
 }
 

@@ -87,12 +87,6 @@
 	
 	// the JSON library adds a category to NSString, which gives us new methods, like JSONValue.
 	self.dict = [[responseString JSONValue] retain];	
-	
-	//NSLog(@"THE RESPONSE STRING IS: %@",responseString);	
-	//NSLog(@"THE DICTIONARY IS: %@", [self.dict description]);
-	//NSLog(@"THE REQUEST IS: %@", [[self.dict objectForKey:@"request"] description]);
-	
-	
 	self.results = [[self.dict objectForKey:@"results"] retain];
 	self.count = [[[self.results valueForKey:@"count"] description] intValue];
 	
@@ -108,7 +102,6 @@
 	}
 	 
 		
-	
 	
 #if DEBUG
 	discovery *disc = [[discovery alloc] init];

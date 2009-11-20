@@ -62,56 +62,29 @@
     
 	// Configure the cell.	
 	
-	// i want to do something likethis:
-	// NSString *curplacename = oShizzeeps.places[indexPath.row].name
+	place *curPlace = [oShizzeeps.places objectAtIndex:indexPath.row];
+	NSString *curPlaceName = curPlace.name;
+	NSString *pop = curPlace.population;
 	
-	NSDictionary *curplace = [[oShizzeeps.results valueForKey:@"places"] objectAtIndex:indexPath.row];		
-	NSString *places_name = [[curplace valueForKey:@"places_name"] description];
-	
-	// sometimes places_name has an ampersand <rolls eyes>
-	places_name = [places_name stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
-	
-	NSString *population = [[curplace valueForKey:@"population"] description];
-	
-	// get the names of the people in this place
-	
-	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", population, places_name];
+	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", pop, curPlaceName];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	
-	NSDictionary *shouts = [curplace objectForKey:@"shouts"];
-	NSDictionary *s_results = [shouts objectForKey:@"results"];
-	NSArray *s_r_shouts = [s_results objectForKey:@"shouts"];	
-	NSArray *name = [s_r_shouts valueForKey:@"people_name"];
-		
-	// make the names look better
-	NSEnumerator *enumerator = [name objectEnumerator];
-	id anObject;
-	NSString *names = @"";
-	while (anObject = [enumerator nextObject]) {
-			names = [NSString stringWithFormat:@"%@ %@", names, [anObject description]];
-	}
-	cell.detailTextLabel.text = names;
-   
-	
-	
-	//NSLog(@"curplace: %@\n\n", [curplace description]);	
-	//NSLog(@"shouts:\n\n%@", [shouts description]);
-	//NSLog(@"shouts_results:\n\n%@", [shouts_results description]);
-	//NSLog(@"shouts -> results -> shouts:\n\n%@", [s_r_shouts description]);
-	//NSLog(@"name: %@", name);
-	
-	
+	cell.detailTextLabel.text = curPlace.people;
 	
     return cell;
 }
 
 // Number of Rows in Section
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	
 	int numRows = oShizzeeps.count;
-	NSLog(@"I am a table and I have %i rows.", numRows);
-	return numRows;
-	
+	return numRows;	
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic may go here. Create and push another view controller.
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
 
