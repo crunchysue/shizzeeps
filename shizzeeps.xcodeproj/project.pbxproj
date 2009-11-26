@@ -14,6 +14,7 @@
 		282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 282CCBFD0DB6C98000C4EA27 /* SecondView.xib */; };
 		288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765070DF74369002DB57D /* CoreGraphics.framework */; };
 		28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD73870D9D96C1002E5188 /* MainWindow.xib */; };
+		8083F8C710BE012B007481D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8083F8C510BE012B007481D2 /* Default.png */; };
 		80C4727610BDE9A90060CE5B /* shizzeepsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C4727410BDE9A90060CE5B /* shizzeepsViewController.m */; };
 		80C4727710BDE9A90060CE5B /* shizzeepsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80C4727510BDE9A90060CE5B /* shizzeepsViewController.xib */; };
 		80C472A110BDEA390060CE5B /* discovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C4728910BDEA390060CE5B /* discovery.m */; };
@@ -27,6 +28,7 @@
 		80C472A910BDEA390060CE5B /* place.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C4729C10BDEA390060CE5B /* place.m */; };
 		80C472AA10BDEA390060CE5B /* shizzeeps.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C4729E10BDEA390060CE5B /* shizzeeps.m */; };
 		80C472AB10BDEA390060CE5B /* shizzow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C472A010BDEA390060CE5B /* shizzow.m */; };
+		80EFDA0510BEEA07005E94AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 80EFDA0410BEEA07005E94AF /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		28A0AB4B0D9B1048005BE974 /* shizzeeps_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzeeps_Prefix.pch; sourceTree = "<group>"; };
 		28AD73870D9D96C1002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8083F8C510BE012B007481D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		80C4727310BDE9A90060CE5B /* shizzeepsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzeepsViewController.h; sourceTree = "<group>"; };
 		80C4727410BDE9A90060CE5B /* shizzeepsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzeepsViewController.m; sourceTree = "<group>"; };
 		80C4727510BDE9A90060CE5B /* shizzeepsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = shizzeepsViewController.xib; path = Classes/shizzeepsViewController.xib; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		80C4729E10BDEA390060CE5B /* shizzeeps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzeeps.m; sourceTree = "<group>"; };
 		80C4729F10BDEA390060CE5B /* shizzow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzow.h; sourceTree = "<group>"; };
 		80C472A010BDEA390060CE5B /* shizzow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzow.m; sourceTree = "<group>"; };
+		80EFDA0410BEEA07005E94AF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* shizzeeps-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "shizzeeps-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				80EFDA0410BEEA07005E94AF /* Icon.png */,
+				8083F8C510BE012B007481D2 /* Default.png */,
 				282CCBFD0DB6C98000C4EA27 /* SecondView.xib */,
 				28AD73870D9D96C1002E5188 /* MainWindow.xib */,
 				80C4727510BDE9A90060CE5B /* shizzeepsViewController.xib */,
@@ -238,6 +244,8 @@
 				28AD73880D9D96C1002E5188 /* MainWindow.xib in Resources */,
 				282CCBFE0DB6C98000C4EA27 /* SecondView.xib in Resources */,
 				80C4727710BDE9A90060CE5B /* shizzeepsViewController.xib in Resources */,
+				8083F8C710BE012B007481D2 /* Default.png in Resources */,
+				80EFDA0510BEEA07005E94AF /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
