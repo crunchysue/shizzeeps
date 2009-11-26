@@ -70,19 +70,19 @@
  -------------------------------------------------------------------------- */
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	NSLog (@"connectionDidReceiveResponse");
 	[shizzeepsResponseData setLength:0];
+	//NSLog(@"connection did receive response");
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	NSLog (@"connectionDidReceiveData");
+	//NSLog(@"connection appending data: %@", [data description]);
 	[shizzeepsResponseData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	
-	NSLog (@"connectionDidFinishLoading");  	
     
+	NSLog(@"connection did finish loading");
+	
 	NSString *responseString = [[NSString alloc] initWithData:shizzeepsResponseData encoding:NSUTF8StringEncoding];
 	
 	// the JSON library adds a category to NSString, which gives us new methods, like JSONValue.

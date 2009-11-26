@@ -2,33 +2,44 @@
 //  shizzeepsAppDelegate.m
 //  shizzeeps
 //
-//  Created by Sue Brown on 11/7/09.
+//  Created by Sue Brown on 11/25/09.
 //  Copyright House of Crunchy 2009. All rights reserved.
 //
 
 #import "shizzeepsAppDelegate.h"
-#import "shizzeepsViewController.h"
+
 
 @implementation shizzeepsAppDelegate
 
 @synthesize window;
-@synthesize viewController;
+@synthesize tabBarController;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    // Override point for customization after app launch    
-    [window addSubview:viewController.view];
-    [window makeKeyAndVisible];
-	
+    // Add the tab bar controller's current view as a subview of the window
+    [window addSubview:tabBarController.view];
 }
 
 
+/*
+// Optional UITabBarControllerDelegate method
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+}
+*/
+
+/*
+// Optional UITabBarControllerDelegate method
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray *)viewControllers changed:(BOOL)changed {
+}
+*/
+
+
 - (void)dealloc {
-    [viewController release];
+    [tabBarController release];
     [window release];
     [super dealloc];
 }
 
-
 @end
+

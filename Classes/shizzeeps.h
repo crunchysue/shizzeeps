@@ -32,9 +32,9 @@
 @property (nonatomic, retain) NSArray		 * results;
 @property (nonatomic, retain) NSMutableArray * places;
 @property (readwrite, assign) int			   count;
-@property(nonatomic, retain)  id			   delegate;
-@property(nonatomic)		  SEL			   callback;
-@property(nonatomic)		  SEL			   errorCallback;
+@property (nonatomic, retain) id			   delegate;
+@property (nonatomic)		  SEL			   callback;
+@property (nonatomic)		  SEL			   errorCallback;
 
 - (void) init:(id)requestDelegate requestSelector:(SEL)requestSelector;
 
