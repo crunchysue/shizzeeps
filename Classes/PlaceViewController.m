@@ -1,22 +1,15 @@
 //
-//  shizzeepsViewController.m
+//  PlaceViewController.m
 //  shizzeeps
 //
-//  Created by Sue Brown on 11/25/09.
+//  Created by Sue Brown on 11/27/09.
 //  Copyright 2009 House of Crunchy. All rights reserved.
 //
 
-#import "shizzeepsViewController.h"
-#import "discovery.h"
 #import "PlaceViewController.h"
-#import "PlaceDetailsVC.h"
 
 
-
-@implementation shizzeepsViewController
-
-@synthesize oShizzeeps;
-
+@implementation PlaceViewController
 
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -31,19 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.title = @"Place";
+
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
-
+/*
 - (void)viewWillAppear:(BOOL)animated {
-	 [super viewWillAppear:animated];
-	
-	oShizzeeps = [[shizzeeps alloc] init];
-	[oShizzeeps init:self requestSelector:@selector(displayShizzeeps)];
+    [super viewWillAppear:animated];
 }
-
+*/
 /*
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -81,22 +73,6 @@
 }
 
 
-#pragma mark -
-#pragma mark Callback from shizzeeps
-
-/* displayShizzeeps
- After the shizzeeps object has all its data loaded, this is the 
- callback function that it calls. This has to be done because we can't
- show the tableview until we have the data.
- -------------------------------------------------------------------------- */
-- (void) displayShizzeeps {
-	[shizzeepsTable reloadData];
-}
-
-
-
-
-#pragma mark -
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -106,9 +82,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    int numRows = oShizzeeps.count;
-	//NSLog(@"i am a table and i have %i rows", numRows);
-	return numRows;	
+    return 1;
 }
 
 
@@ -119,40 +93,20 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Set up the cell...	
-	
-	place *curPlace = [oShizzeeps.places objectAtIndex:indexPath.row];
-	NSString *curPlaceName = curPlace.name;
-	NSString *pop = curPlace.population;
-	
-	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", pop, curPlaceName];
-	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	cell.detailTextLabel.text = curPlace.people;
-	
+    // Set up the cell...
+	cell.textLabel.text = @"this is a place";
     return cell;
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {	
-	
-	NSLog(@"you selected row %i", indexPath.row);
-	
-//	PlaceViewController *controller = [[PlaceViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//	
-//	// the controller has a task property, remember?
-//	//controller.task = task;
-//	
-//	[self.navigationController pushViewController:controller animated:YES];
-//	
-//	[controller release];
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Navigation logic may go here. Create and push another view controller.
-	 PlaceDetailsVC *anotherViewController = [[PlaceDetailsVC alloc] initWithNibName:@"PlaceDetailsVC" bundle:nil];
-	 [self.navigationController pushViewController:anotherViewController];
-	 [anotherViewController release];
+	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
+	// [self.navigationController pushViewController:anotherViewController];
+	// [anotherViewController release];
 }
 
 
@@ -198,7 +152,6 @@
 
 - (void)dealloc {
     [super dealloc];
-	[oShizzeeps release];
 }
 
 
