@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "shizzeepsNavigationController.h"
+
 
 @interface shizzeepsAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate> {
     UIWindow *window;
-    UITabBarController *tabBarController;
+    IBOutlet UITabBarController *tabBarController;
+	IBOutlet UINavigationController *navigationController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet UITabBarController *tabBarController;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
 
 @end

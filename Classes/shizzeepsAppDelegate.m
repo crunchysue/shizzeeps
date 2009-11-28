@@ -13,6 +13,7 @@
 
 @synthesize window;
 @synthesize tabBarController;
+@synthesize navigationController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {

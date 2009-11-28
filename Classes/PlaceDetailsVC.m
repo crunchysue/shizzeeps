@@ -11,6 +11,8 @@
 
 @implementation PlaceDetailsVC
 
+@synthesize thePlace;
+
 /*
 - (id)initWithStyle:(UITableViewStyle)style {
     // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -80,15 +82,13 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 1;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-	NSLog(@"you are at a row");
-	
+    	
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -97,7 +97,10 @@
     }
     
     // Set up the cell...
-	cell.textLabel.text = @"this is my cell";
+	NSString *curPlaceName = self.thePlace.name;
+	NSString *pop = self.thePlace.population;
+	
+	cell.textLabel.text = [NSString stringWithFormat:@"There are %@ at %@", pop, curPlaceName];
 	
     return cell;
 }

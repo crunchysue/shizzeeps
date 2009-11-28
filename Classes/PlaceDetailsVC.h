@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "place.h"
 
+@class place;
 
 @interface PlaceDetailsVC : UITableViewController {
-
+	place *thePlace;
 }
+
+@property (nonatomic, retain) place *thePlace;
 
 @end

@@ -8,7 +8,6 @@
 
 #import "shizzeepsViewController.h"
 #import "discovery.h"
-#import "PlaceViewController.h"
 #import "PlaceDetailsVC.h"
 
 
@@ -31,8 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.navigationItem.title = @"Shizzeeps";
 }
 
 
@@ -138,21 +136,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {	
 	
-	NSLog(@"you selected row %i", indexPath.row);
-	
-//	PlaceViewController *controller = [[PlaceViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//	
-//	// the controller has a task property, remember?
-//	//controller.task = task;
-//	
-//	[self.navigationController pushViewController:controller animated:YES];
-//	
-//	[controller release];
+	PlaceDetailsVC *details = [[PlaceDetailsVC alloc] initWithStyle:UITableViewStyleGrouped];
+	details.thePlace = [oShizzeeps.places objectAtIndex:indexPath.row];
+		
+	[self.navigationController pushViewController:details animated:YES];
 
-    // Navigation logic may go here. Create and push another view controller.
-	 PlaceDetailsVC *anotherViewController = [[PlaceDetailsVC alloc] initWithNibName:@"PlaceDetailsVC" bundle:nil];
-	 [self.navigationController pushViewController:anotherViewController];
-	 [anotherViewController release];
+	[details release];
 }
 
 
