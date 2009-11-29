@@ -13,6 +13,7 @@
 
 @interface PlaceDetailsVC : UITableViewController {
 	place *thePlace;
+	UITextView *placeAddr;
 }
 
 @property (nonatomic, retain) place *thePlace;

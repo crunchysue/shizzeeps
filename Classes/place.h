@@ -20,9 +20,10 @@
 	NSString		*city;
 	NSString		*state;
 	NSString		*zip;
-	NSURL			*url;
-	NSMutableArray  *shouts;
-	NSString		*people;
+	NSString		*website;
+	NSArray			*messages;
+	NSArray			*people;
+	NSString		*peopleList;
 	
 }
 
@@ -35,9 +36,10 @@
 @property (nonatomic, retain) NSString * city;
 @property (nonatomic, retain) NSString * state;
 @property (nonatomic, retain) NSString * zip;
-@property (nonatomic, retain) NSURL    * url;
-@property (nonatomic, retain) NSArray  * shouts;
-@property (nonatomic, retain) NSString  * people;
+@property (nonatomic, retain) NSString * website;
+@property (nonatomic, retain) NSArray  * messages;
+@property (nonatomic, retain) NSArray  * people;
+@property (nonatomic, retain) NSString * peopleList;
 
 
 - (void) initPlace;

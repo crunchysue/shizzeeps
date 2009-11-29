@@ -128,7 +128,7 @@
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"%@: %@", pop, curPlaceName];
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	cell.detailTextLabel.text = curPlace.people;
+	cell.detailTextLabel.text = curPlace.peopleList;
 	
     return cell;
 }

@@ -22,14 +22,15 @@
 }
 */
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.navigationItem.title = self.thePlace.name;
 }
-*/
+
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,13 +77,13 @@
 #pragma mark Table view methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+	return section == 1 ? [self.thePlace.people count] : 1;
 }
 
 
@@ -97,13 +98,58 @@
     }
     
     // Set up the cell...
-	NSString *curPlaceName = self.thePlace.name;
-	NSString *pop = self.thePlace.population;
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"There are %@ at %@", pop, curPlaceName];
+	NSString *curPlaceName = nil;
+	NSString *pop = nil;
+	NSString *addr = nil;
+
+	
+	switch (indexPath.section) {
+		case 0:
+			pop = self.thePlace.population;
+			cell.textLabel.text = [NSString stringWithFormat:@"Population: %@", pop];
+			break;
+			
+		case 1:
+			cell.textLabel.text = [self.thePlace.people objectAtIndex:indexPath.row];
+			break;
+			
+		case 2:	
+			curPlaceName = self.thePlace.name;
+			addr = [NSString stringWithFormat:@"%@\n%@\n%@\n%@, %@  %@\n%@", 
+							  curPlaceName, self.thePlace.address1, self.thePlace.address2,
+							  self.thePlace.city, self.thePlace.state, self.thePlace.zip, self.thePlace.website];
+
+			placeAddr = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, 285, 75)];
+			placeAddr.returnKeyType = UIReturnKeyDone;
+			placeAddr.text = addr;
+			[cell.contentView addSubview:placeAddr];
+			break;
+			
+		default:
+			break;
+	}
+	
+	
 	
     return cell;
 }
+
+
+
+// implement this callback from the UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView 
+heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	// tableView.rowHeight is the default row height for a table
+	return indexPath.section == 2 ? 95 : tableView.rowHeight;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+	// we could have used nil instead of the empty string
+	return section == 2 ? @"Address" : @"";
+}
+
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,6 +198,8 @@
     return YES;
 }
 */
+
+
 
 
 - (void)dealloc {
