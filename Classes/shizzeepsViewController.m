@@ -31,6 +31,9 @@
     [super viewDidLoad];
 	
 	self.navigationItem.title = @"Shizzeeps";
+	
+	oShizzeeps = [[shizzeeps alloc] init];
+	[oShizzeeps init:self requestSelector:@selector(displayShizzeeps)];
 }
 
 
@@ -38,8 +41,7 @@
 - (void)viewWillAppear:(BOOL)animated {
 	 [super viewWillAppear:animated];
 	
-	oShizzeeps = [[shizzeeps alloc] init];
-	[oShizzeeps init:self requestSelector:@selector(displayShizzeeps)];
+	
 }
 
 /*

@@ -17,9 +17,11 @@
 	NSArray			*results; // this is where most of the good stuff is.
 	NSMutableArray	*places;  // an array of place objects
 	
-	
 	// count is how many places have shizzeeps in them
 	int count; 
+	
+	// hasData - tells whether or not we've already been initted
+	bool hasData;
 	
 	// the callbacks, so we can send the data to the caller when it's ready
 	id				 delegate;
