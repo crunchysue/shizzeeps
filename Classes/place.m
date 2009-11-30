@@ -85,6 +85,7 @@
 
 	// loop through the shouts from this place
 	while (anObject = [shouts_enumerator nextObject]) {
+		//NSLog(@"anObject%@", [anObject description]);
 		curPersonName = [anObject valueForKey:@"people_name"];
 		curPeopleImages = [anObject valueForKey:@"people_images"];
 		[curPerson setObject:[curPeopleImages valueForKey:@"people_image_16"] forKey:@"people_image_16"];
@@ -112,7 +113,7 @@
 			[curPerson setObject:tmpMsgs forKey:msgsKey];
 			[curMsgs removeAllObjects];
 			
-			NSLog(@"\n\n%@: %@",curPersonName, [curPerson description]);
+			//NSLog(@"\n\n%@: %@",curPersonName, [curPerson description]);
 		}
 		// add the person to the shouts
 		[curShouts setObject:curPerson forKey:curPersonName];
