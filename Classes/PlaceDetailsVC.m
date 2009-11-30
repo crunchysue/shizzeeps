@@ -94,7 +94,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle 
+									   reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Set up the cell...
@@ -102,18 +103,30 @@
 	NSString *curPlaceName = nil;
 	NSString *pop = nil;
 	NSString *addr = nil;
-
+	NSString *curPersonName = nil;
+	NSDictionary *curPerson = nil;
+	NSArray *curMsgs = nil;
+	NSString *msgsKey = nil;
 	
 	switch (indexPath.section) {
+			
+		// Population
 		case 0:
 			pop = self.thePlace.population;
 			cell.textLabel.text = [NSString stringWithFormat:@"Population: %@", pop];
 			break;
 			
+		// One cell for each person
 		case 1:
-			cell.textLabel.text = [self.thePlace.people objectAtIndex:indexPath.row];
+			curPersonName = [self.thePlace.people objectAtIndex:indexPath.row];
+			cell.textLabel.text = curPersonName;
+			curPerson = [self.thePlace.shouts objectForKey:curPersonName];
+			msgsKey = [NSString stringWithFormat:@"messages_from_%@", curPersonName];
+			curMsgs = [[curPerson objectForKey:msgsKey] allValues];
+			cell.detailTextLabel.text = [curMsgs description];
 			break;
 			
+		// The place's address
 		case 2:	
 			curPlaceName = self.thePlace.name;
 			addr = [NSString stringWithFormat:@"%@\n%@\n%@\n%@, %@  %@\n%@", 

@@ -31,6 +31,7 @@
 		80C472AA10BDEA390060CE5B /* shizzeeps.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C4729E10BDEA390060CE5B /* shizzeeps.m */; };
 		80C472AB10BDEA390060CE5B /* shizzow.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C472A010BDEA390060CE5B /* shizzow.m */; };
 		80C521D810C1FEB20027C4C4 /* _SHIZZEEPS_DATA_EXAMPLE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80C521D710C1FEB20027C4C4 /* _SHIZZEEPS_DATA_EXAMPLE.txt */; };
+		80D071CF10C368B70058B8C2 /* _SHIZZEEPS_MORE_DATA.txt in Resources */ = {isa = PBXBuildFile; fileRef = 80D071CE10C368B70058B8C2 /* _SHIZZEEPS_MORE_DATA.txt */; };
 		80EFDA0510BEEA07005E94AF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 80EFDA0410BEEA07005E94AF /* Icon.png */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		80C4729F10BDEA390060CE5B /* shizzow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzow.h; sourceTree = "<group>"; };
 		80C472A010BDEA390060CE5B /* shizzow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzow.m; sourceTree = "<group>"; };
 		80C521D710C1FEB20027C4C4 /* _SHIZZEEPS_DATA_EXAMPLE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _SHIZZEEPS_DATA_EXAMPLE.txt; sourceTree = "<group>"; };
+		80D071CE10C368B70058B8C2 /* _SHIZZEEPS_MORE_DATA.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = _SHIZZEEPS_MORE_DATA.txt; sourceTree = "<group>"; };
 		80EFDA0410BEEA07005E94AF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* shizzeeps-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "shizzeeps-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,6 +197,7 @@
 				80C4729810BDEA390060CE5B /* NSURLRequest+IgnoreSSL.h */,
 				80C4729910BDEA390060CE5B /* NSURLRequest+IgnoreSSL.m */,
 				80C521D710C1FEB20027C4C4 /* _SHIZZEEPS_DATA_EXAMPLE.txt */,
+				80D071CE10C368B70058B8C2 /* _SHIZZEEPS_MORE_DATA.txt */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				8083F8C710BE012B007481D2 /* Default.png in Resources */,
 				80EFDA0510BEEA07005E94AF /* Icon.png in Resources */,
 				80C521D810C1FEB20027C4C4 /* _SHIZZEEPS_DATA_EXAMPLE.txt in Resources */,
+				80D071CF10C368B70058B8C2 /* _SHIZZEEPS_MORE_DATA.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,7 +24,7 @@
 	NSArray			*messages;
 	NSArray			*people;
 	NSString		*peopleList;
-	
+	NSDictionary	*shouts;
 }
 
 @property (nonatomic, retain) NSDictionary * placeDict;
@@ -40,7 +40,7 @@
 @property (nonatomic, retain) NSArray  * messages;
 @property (nonatomic, retain) NSArray  * people;
 @property (nonatomic, retain) NSString * peopleList;
-
+@property (nonatomic, retain) NSDictionary *shouts;
 
 - (void) initPlace;
 

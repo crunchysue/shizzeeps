@@ -1,0 +1,154 @@
+2009-11-29 18:41:59.793 shizzeeps[12188:207] shouts->results->shouts: (
+        {
+        address1 = "29th &amp; Clinton";
+        address2 = "";
+        altitude = "0.0000000";
+        "application_id" = "";
+        "application_name" = "";
+        "application_website" = "";
+        arrived = "2009-11-29T16:26:30-0800";
+        city = Portland;
+        "country_iso" = US;
+        "country_name" = "United States";
+        "is_listener" = 0;
+        "is_listening" = 0;
+        "is_person" = 0;
+        latitude = "45.50354400000000";
+        longitude = "-122.63560100000000";
+        modified = "2009-11-29T16:26:30-0800";
+        "people_images" =         {
+            "people_image_16" = "http://people.shizzow.com/crunchydev3_16.jpg";
+            "people_image_24" = "http://people.shizzow.com/crunchydev3_24.jpg";
+            "people_image_32" = "http://people.shizzow.com/crunchydev3_32.jpg";
+            "people_image_48" = "http://people.shizzow.com/crunchydev3_48.jpg";
+            "people_image_64" = "http://people.shizzow.com/crunchydev3_64.jpg";
+            "people_image_80" = "http://people.shizzow.com/crunchydev3_80.jpg";
+            "people_image_96" = "http://people.shizzow.com/crunchydev3_96.jpg";
+        };
+        "people_name" = crunchydev3;
+        phone = "";
+        "places_key" = Lgbyc9;
+        "places_name" = "Shizzeeps World HQ";
+        "profiles_name" = "Sue Brown Dev 3";
+        public = 1;
+        "shout_time" = "2 hours ago";
+        "shouts_history_id" = 28796;
+        "shouts_messages" =         (
+                        {
+                "application_id" = <null>;
+                "application_name" = <null>;
+                "application_website" = <null>;
+                message = "crunchysue seems to really like this couch.";
+                "shout_time" = "2 hours ago";
+                "shouts_history_id" = 28796;
+                time = "2009-11-29T16:26:30-0800";
+            }
+        );
+        "state_iso" = OR;
+        "state_name" = Oregon;
+        status = here;
+        website = "http://shizzeeps.com";
+        zip = 97202;
+    },
+        {
+        address1 = "29th &amp; Clinton";
+        address2 = "";
+        altitude = "0.0000000";
+        "application_id" = "";
+        "application_name" = "";
+        "application_website" = "";
+        arrived = "2009-11-29T16:10:51-0800";
+        city = Portland;
+        "country_iso" = US;
+        "country_name" = "United States";
+        "is_listener" = 0;
+        "is_listening" = 0;
+        "is_person" = 0;
+        latitude = "45.50354400000000";
+        longitude = "-122.63560100000000";
+        modified = "2009-11-29T16:25:23-0800";
+        "people_images" =         {
+            "people_image_16" = "http://people.shizzow.com/crunchysue_16.jpg";
+            "people_image_24" = "http://people.shizzow.com/crunchysue_24.jpg";
+            "people_image_32" = "http://people.shizzow.com/crunchysue_32.jpg";
+            "people_image_48" = "http://people.shizzow.com/crunchysue_48.jpg";
+            "people_image_64" = "http://people.shizzow.com/crunchysue_64.jpg";
+            "people_image_80" = "http://people.shizzow.com/crunchysue_80.jpg";
+            "people_image_96" = "http://people.shizzow.com/crunchysue_96.jpg";
+        };
+        "people_name" = crunchysue;
+        phone = "";
+        "places_key" = Lgbyc9;
+        "places_name" = "Shizzeeps World HQ";
+        "profiles_name" = "Sue Brown";
+        public = 1;
+        "shout_time" = "2 hours ago";
+        "shouts_history_id" = 28795;
+        "shouts_messages" =         (
+                        {
+                "application_id" = <null>;
+                "application_name" = <null>;
+                "application_website" = <null>;
+                message = "Have I mentioned how much I love my couch lately?";
+                "shout_time" = "2 hours ago";
+                "shouts_history_id" = 28795;
+                time = "2009-11-29T16:25:23-0800";
+            },
+                        {
+                "application_id" = <null>;
+                "application_name" = <null>;
+                "application_website" = <null>;
+                message = "My Brompton needs a name. Maybe.";
+                "shout_time" = "2 hours ago";
+                "shouts_history_id" = 28795;
+                time = "2009-11-29T16:10:51-0800";
+            }
+        );
+        "state_iso" = OR;
+        "state_name" = Oregon;
+        status = here;
+        website = "http://shizzeeps.com";
+        zip = 97202;
+    },
+        {
+        address1 = "29th &amp; Clinton";
+        address2 = "";
+        altitude = "0.0000000";
+        "application_id" = "";
+        "application_name" = "";
+        "application_website" = "";
+        arrived = "2009-11-29T12:49:54-0800";
+        city = Portland;
+        "country_iso" = US;
+        "country_name" = "United States";
+        "is_listener" = 0;
+        "is_listening" = 0;
+        "is_person" = 0;
+        latitude = "45.50354400000000";
+        longitude = "-122.63560100000000";
+        modified = "2009-11-29T12:49:54-0800";
+        "people_images" =         {
+            "people_image_16" = "http://people.shizzow.com/crunchydev2_16.jpg";
+            "people_image_24" = "http://people.shizzow.com/crunchydev2_24.jpg";
+            "people_image_32" = "http://people.shizzow.com/crunchydev2_32.jpg";
+            "people_image_48" = "http://people.shizzow.com/crunchydev2_48.jpg";
+            "people_image_64" = "http://people.shizzow.com/crunchydev2_64.jpg";
+            "people_image_80" = "http://people.shizzow.com/crunchydev2_80.jpg";
+            "people_image_96" = "http://people.shizzow.com/crunchydev2_96.jpg";
+        };
+        "people_name" = crunchydev2;
+        phone = "";
+        "places_key" = Lgbyc9;
+        "places_name" = "Shizzeeps World HQ";
+        "profiles_name" = "Shizzeeps PDX";
+        public = 1;
+        "shout_time" = "5 hours ago";
+        "shouts_history_id" = 28792;
+        "shouts_messages" = <null>;
+        "state_iso" = OR;
+        "state_name" = Oregon;
+        status = here;
+        website = "http://shizzeeps.com";
+        zip = 97202;
+    }
+)

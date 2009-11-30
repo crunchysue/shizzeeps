@@ -123,10 +123,10 @@ NSLog(@"%@", br);
 	int i = 0;
 	while (anObject = [enumerator nextObject]) {
 		if ([anObject isKindOfClass:[NSArray class]]) {
-			NSLog(@"ITEM #%i IS AN ARRAY: ", i);
+			NSLog(@"ITEM #%i IS AN ARRAY of %i items: ", i, [anObject count]);
 			[self enumerateArray:anObject];
 		}else if ([anObject isKindOfClass:[NSDictionary class]]) {
-			NSLog(@"ITEM %i IS A DICTIONARY: ", i);
+			NSLog(@"ITEM %i IS A DICTIONARY of %i items: ", i, [anObject count]);
 			[self enumerateDictionary:anObject];
 		} else {
 			NSLog(@"ITEM #%i IS A %@: %@", i, [[anObject class] description], [anObject description]);
