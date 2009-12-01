@@ -116,14 +116,22 @@
 			cell.textLabel.text = [NSString stringWithFormat:@"Population: %@", pop];
 			break;
 			
-		// One cell for each person
+		// One cell for each person & their comments
 		case 1:
 			curPersonName = [self.thePlace.people objectAtIndex:indexPath.row];
 			cell.textLabel.text = curPersonName;
 			curPerson = [self.thePlace.shouts objectForKey:curPersonName];
 			msgsKey = [NSString stringWithFormat:@"messages_from_%@", curPersonName];
 			curMsgs = [[curPerson objectForKey:msgsKey] allValues];
-			cell.detailTextLabel.text = [curMsgs description];
+			
+			// make the messages into a nice string
+			NSEnumerator *enumerator = [curMsgs objectEnumerator];
+			id anObject;
+			NSString *msgs = @"";
+			while (anObject = [enumerator nextObject]) {
+				msgs = [NSString stringWithFormat:@"%@ %@", msgs, [anObject description]];
+			}
+			cell.detailTextLabel.text = msgs;
 			break;
 			
 		// The place's address

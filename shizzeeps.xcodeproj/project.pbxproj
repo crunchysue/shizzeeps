@@ -50,6 +50,7 @@
 		803C82F610C1B83000A6E795 /* shizzeepsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzeepsNavigationController.m; sourceTree = "<group>"; };
 		8051485D10C041B600EB65EA /* PlaceDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailsVC.h; sourceTree = "<group>"; };
 		8051485E10C041B600EB65EA /* PlaceDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailsVC.m; sourceTree = "<group>"; };
+		8054097110C459FB0072CA70 /* passwords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passwords.h; sourceTree = "<group>"; };
 		8083F8C510BE012B007481D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		80C4727310BDE9A90060CE5B /* shizzeepsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzeepsViewController.h; sourceTree = "<group>"; };
 		80C4727410BDE9A90060CE5B /* shizzeepsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shizzeepsViewController.m; sourceTree = "<group>"; };
@@ -71,7 +72,6 @@
 		80C4729710BDEA390060CE5B /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		80C4729810BDEA390060CE5B /* NSURLRequest+IgnoreSSL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+IgnoreSSL.h"; sourceTree = "<group>"; };
 		80C4729910BDEA390060CE5B /* NSURLRequest+IgnoreSSL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+IgnoreSSL.m"; sourceTree = "<group>"; };
-		80C4729A10BDEA390060CE5B /* passwords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = passwords.h; sourceTree = "<group>"; };
 		80C4729B10BDEA390060CE5B /* place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = place.h; sourceTree = "<group>"; };
 		80C4729C10BDEA390060CE5B /* place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = place.m; sourceTree = "<group>"; };
 		80C4729D10BDEA390060CE5B /* shizzeeps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shizzeeps.h; sourceTree = "<group>"; };
@@ -101,9 +101,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8054093610C457E60072CA70 /* Extras */,
 				80C472D310BDEBFE0060CE5B /* Views */,
 				80C472C110BDEB800060CE5B /* Data */,
-				80C4728A10BDEA390060CE5B /* JSON */,
 				1D3623240D0F684500981E51 /* shizzeepsAppDelegate.h */,
 				1D3623250D0F684500981E51 /* shizzeepsAppDelegate.m */,
 			);
@@ -162,6 +162,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8054093610C457E60072CA70 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				80C4728A10BDEA390060CE5B /* JSON */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
 		80C4728A10BDEA390060CE5B /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +195,6 @@
 			children = (
 				80C4729B10BDEA390060CE5B /* place.h */,
 				80C4729C10BDEA390060CE5B /* place.m */,
-				80C4729A10BDEA390060CE5B /* passwords.h */,
 				80C4728810BDEA390060CE5B /* discovery.h */,
 				80C4728910BDEA390060CE5B /* discovery.m */,
 				80C4729D10BDEA390060CE5B /* shizzeeps.h */,
@@ -198,6 +205,7 @@
 				80C4729910BDEA390060CE5B /* NSURLRequest+IgnoreSSL.m */,
 				80C521D710C1FEB20027C4C4 /* _SHIZZEEPS_DATA_EXAMPLE.txt */,
 				80D071CE10C368B70058B8C2 /* _SHIZZEEPS_MORE_DATA.txt */,
+				8054097110C459FB0072CA70 /* passwords.h */,
 			);
 			name = Data;
 			sourceTree = "<group>";

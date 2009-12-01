@@ -8,7 +8,6 @@
 
 #import "place.h"
 
-
 @implementation place
 
 @synthesize placeDict;
@@ -65,11 +64,7 @@
 	
 	
 	
-	// loop through shouts for this place and make a dictionary of them
-	// dictionary has people names for keys and dictionaries of messages & times for values
-	// e.g. [crunchysue => ['hello' => '1 minute ago'], ['how r u' => '10 minutes ago']]
-	// e.g. [curShouts setObject:shout_msg_dict forKey:@"crunchysue"];
-	
+	// loop through shouts for this place and make a dictionary of them	
 	NSEnumerator *shouts_enumerator = [s_r_shouts objectEnumerator];
 	NSMutableDictionary *curShouts = [NSMutableDictionary dictionaryWithCapacity:10];
 	NSMutableDictionary *curMsgs = [NSMutableDictionary dictionaryWithCapacity:10];
@@ -99,6 +94,8 @@
 			// loop through the messages from this person
 			while (obj = [msg_enumerator nextObject]) {
 				curMsg = [obj valueForKey:@"message"];
+				curMsg = [curMsg stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+				curMsg = [curMsg stringByReplacingOccurrencesOfString:@"&#039;" withString:@"'"];
 				curMsgID = [obj valueForKey:@"time"];
 				// add this message to the current messages
 				//NSLog(@"%@: %@ said %@", curMsgID, curPersonName, curMsg);
